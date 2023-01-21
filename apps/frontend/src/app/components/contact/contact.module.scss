@@ -1,0 +1,57 @@
+@import 'libs/ui-design/src/lib/assets/colors';
+
+.contact {
+  margin: auto;
+
+  color: $black;
+  padding: 2rem;
+  max-width: 768px;
+
+  border-radius: 15px;
+
+  background-color: $veryDark;
+}
+
+form {
+  input,
+  textarea {
+    margin: 2rem 0;
+    display: block;
+    padding: 15px;
+    width: 100%;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: transparent;
+
+    border: none;
+
+    outline: 1px solid $yellow;
+    outline: 1px solid $navyLight;
+    color: $lighterGray;
+  }
+}
+
+input:focus {
+  outline: 2px solid $lightBlue;
+}
+
+.message {
+  resize: none;
+  margin-bottom: 1rem;
+
+  border: none;
+}
+
+.message:focus {
+  outline: 2px solid $lightBlue;
+}
+
+label {
+  color: $white;
+
+  margin: 15px 0;
+  display: block;
+
+  width: 100%;
+  border-radius: 5px;
+}

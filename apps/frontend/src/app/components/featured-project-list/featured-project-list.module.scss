@@ -1,0 +1,11 @@
+@import 'libs/ui-design/src/lib/assets/colors';
+
+.btnLearnMore {
+  color: $lightYellow !important;
+  padding: 15px !important;
+  user-select: none;
+  margin: 0 !important;
+  &:hover {
+    background-color: #e4ce0631 !important;
+  }
+}

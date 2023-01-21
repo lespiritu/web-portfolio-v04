@@ -1,0 +1,46 @@
+/* Color Theme Swatches in Hex */
+
+/* Primary Theme */
+$veryDark: #181a1f;
+$darkblue: #1c232b;
+$transparentLigh: #296e8346;
+$lightBlue: #7cdbf3;
+$lightBlue1: #00c9e4;
+$lightBlue2: #71878b;
+
+$darkSilver: #6f7681; //text full stack web developer
+$darknava2: #2a353a;
+$black: #263241;
+
+$navy: #1c1f24; //background
+$navyLight: #0f708d;
+$white: rgb(255, 255, 255);
+$lightYellow: #b4b46c;
+
+$cream: #ac9b66;
+$yellow: #d8e280;
+$lighterGray: rgb(181, 189, 201);
+
+$extraDarkGray: rgb(60, 71, 92);
+
+$yellowTransparent: rgb(100, 110, 247);
+
+$darkerGray: rgb(182, 255, 251);
+$darkGray: rgb(138, 148, 168);
+
+$lightestGray: rgb(220, 223, 230);
+$lightGray: rgb(230, 232, 237);
+$extraLightGray: rgb(244, 246, 248);
+$white: rgb(255, 255, 255);
+
+$featuredProject: rgba(21, 121, 134, 0.199);
+$featuredImage: silver;
+
+$themes: (
+  light: (
+    primary: $black,
+  ),
+  dark: (
+    primary: $black,
+  ),
+);

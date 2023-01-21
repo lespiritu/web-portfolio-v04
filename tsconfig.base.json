@@ -1,0 +1,28 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@appScss": ["libs/ui-design/src/lib/assets/app.scss"],
+      "@enums": ["libs/shared/enums/src/index.ts"],
+      "@iac": ["libs/iac/src/index.ts"],
+      "@shapes": ["libs/shared/shapes/src/index.ts"],
+      "@ui-design": ["libs/ui-design/src/index.ts"],
+      "appScss": ["libs/ui/src/assets/app.scss"],
+      "ui": ["libs/ui/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

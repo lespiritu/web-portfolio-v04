@@ -1,0 +1,33 @@
+@import 'libs/ui-design/src/lib/assets/colors';
+
+.cards {
+  .btnCardShow {
+    margin: 30px auto;
+  }
+}
+
+.cardContainer {
+  box-sizing: border-box;
+
+  width: 100%;
+  margin: auto auto;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 20px;
+}
+
+@media screen and (width: 280px)  {
+  .cardContainer {
+    box-sizing: border-box;
+  
+    width: 100%;
+    margin: auto auto;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-auto-rows: 1fr;
+    
+  }
+}

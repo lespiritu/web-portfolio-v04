@@ -1,0 +1,29 @@
+/* Color Theme Swatches in Hex */
+
+/* Primary Theme */
+$black: #0b121e;
+$navy: #0d1420;
+$white: #fff;
+$cream: #ffffe8;
+$yellow: #e89f31;
+$lightYellow: #f7b655;
+$navyLight: #1e2b42;
+$yellowTransparent: rgb(232 159 49 / 12%);
+
+$extraDarkGray: rgb(60, 71, 92);
+$darkerGray: rgb(107, 117, 138);
+$darkGray: rgb(138, 148, 168);
+$lighterGray: rgb(181, 189, 201);
+$lightestGray: rgb(220, 223, 230);
+$lightGray: rgb(230, 232, 237);
+$extraLightGray: rgb(244, 246, 248);
+$white: rgb(255, 255, 255);
+
+$themes: (
+  light: (
+    primary: $black,
+  ),
+  dark: (
+    primary: $black,
+  ),
+);

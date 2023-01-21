@@ -1,0 +1,13 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "frontend": "apps/frontend",
+    "frontend-e2e": "apps/frontend-e2e",
+    "iac": "libs/iac",
+    "shared-enums": "libs/shared/enums",
+    "shared-shapes": "libs/shared/shapes",
+    "ui": "libs/ui",
+    "ui-design": "libs/ui-design"
+  }
+}

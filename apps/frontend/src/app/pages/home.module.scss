@@ -1,0 +1,34 @@
+.header {
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+}
+
+.main {
+  &.fillHeight {
+    padding: 0px 150px;
+  }
+
+  @media (max-width: 1080px) {
+    &.fillHeight {
+      padding: 0px 100px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &.fillHeight {
+      padding: 0px 50px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    &.fillHeight {
+      padding: 0px 25px;
+    }
+  }
+}
+
+.sectionExperienceTab {
+  max-width: 768px;
+}

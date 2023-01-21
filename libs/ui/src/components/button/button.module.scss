@@ -1,0 +1,40 @@
+@import '../../assets/colors';
+
+.button {
+  border-radius: 3px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: auto;
+  font-family: PrimaryMedium;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  color: $yellow;
+  padding: 4px;
+
+  &.primary {
+    color: $black;
+    background-color: $lightYellow;
+    border: 1px solid $lightYellow;
+    border-radius: 4px;
+    padding: 0.45rem 0.6rem;
+    font-family: PrimaryMedium;
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    margin-left: 15px;
+    font-size: 14px;
+
+    &:hover {
+      background-color: $yellow;
+    }
+  }
+
+  &.secondary {
+  }
+}

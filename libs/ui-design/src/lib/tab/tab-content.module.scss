@@ -1,0 +1,32 @@
+@import 'libs/ui-design/src/lib/assets/colors';
+
+.tabContent {
+  padding: 0 30px;
+  color: $lighterGray;
+
+  .title {
+    color: $lightBlue;
+  }
+  .subTitle {
+    color: $navyLight;
+    margin-bottom: 15px;
+  }
+  .descriptions {
+    padding-top: 20px;
+  }
+
+  .listContent {
+    li {
+      position: relative;
+      margin: 20px 0 15px;
+      list-style: none;
+      &::before {
+        content: '\25B6  ';
+        margin-left: -20px;
+        font-size: 10px;
+        color: $navyLight;
+        position: absolute;
+      }
+    }
+  }
+}

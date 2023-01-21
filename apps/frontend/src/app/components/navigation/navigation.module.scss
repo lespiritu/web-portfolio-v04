@@ -1,0 +1,179 @@
+@import 'libs/ui-design/src/lib/assets/colors';
+
+.navHeaderPanel {
+  box-sizing: border-box;
+  user-select: none;
+  box-sizing: border-box;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+  background-color: $darkblue;
+  color: $white;
+  font-family: 'PrimaryMedium';
+  letter-spacing: 1.2px;
+
+  .btnResume {
+    min-width: 150px;
+  }
+
+  img {
+    width: 60px;
+    height: 60px;
+    user-select: none;
+    cursor: pointer;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+
+    li {
+      cursor: pointer;
+      user-select: none;
+    }
+    li:hover {
+      color: $lightBlue1;
+    }
+  }
+
+  align-items: center;
+
+  .rightSide {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .btnToggle {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+  }
+}
+
+@media (max-width: 768px) {
+  .blurBackground {
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 100vh;
+    width: 100%;
+
+    cursor: pointer;
+  }
+
+  .navHeaderPanel {
+    box-sizing: border-box;
+    width: 100vw;
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  .rightSide {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background-color: $darkblue;
+    top: 0;
+    z-index: 4;
+    right: 0;
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
+    width: 75vw;
+    max-width: 400px;
+    transition: 0.2s ease-in-out;
+
+    gap: 3rem;
+
+    .logo {
+      transform: scale(1.2);
+      margin-top: -150px;
+      margin-bottom: 20px;
+
+      cursor: pointer;
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-items: center;
+      padding: 0;
+      gap: 3rem;
+      li {
+        text-align: center;
+      }
+    }
+  }
+
+  .navHeaderPanel {
+    .btnToggle {
+      display: block;
+      position: absolute;
+      top: 35px;
+      right: 30px;
+      z-index: 7;
+      width: 30px;
+      height: 25px;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      transition: 0.3s linear;
+
+      .btnLines {
+        position: absolute;
+        height: 2px;
+        background-color: #ffffff;
+        right: 0;
+        border-radius: 10px;
+        transition: 0.2s linear;
+      }
+
+      .btnLines:nth-child(1) {
+        top: 0;
+        width: 40px;
+      }
+
+      .btnLines:nth-child(2) {
+        top: 50%;
+        width: 32px;
+        transform: translateY(-50%);
+      }
+
+      .btnLines:nth-child(3) {
+        bottom: 0;
+        width: 25px;
+      }
+
+      //toggle button to chance
+      .btnLinesChange {
+        position: absolute;
+        height: 2px;
+        background-color: #ffffff;
+        right: 0;
+        border-radius: 10px;
+        transition: 0.2s linear;
+      }
+
+      .btnLinesChange:nth-child(1) {
+        top: 0;
+        width: 33px;
+        transform-origin: top right;
+        transform: rotate(-45deg);
+      }
+
+      .btnLinesChange:nth-child(2) {
+        top: 50%;
+        opacity: 0;
+        transform: translateY(-50%);
+      }
+
+      .btnLinesChange:nth-child(3) {
+        bottom: 0;
+        width: 33px;
+        transform-origin: bottom right;
+        transform: rotate(45deg);
+      }
+    }
+  }
+}

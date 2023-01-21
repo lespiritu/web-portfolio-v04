@@ -1,0 +1,136 @@
+@import 'libs/ui-design/src/lib/assets/colors';
+.tab {
+  display: flex;
+
+  .tabIndicatorParent {
+    position: relative;
+    background-color: #2d313f;
+    user-select: none;
+
+    .tabIndicator {
+      transition: 0.3s ease;
+      position: absolute;
+      transform: translateX(-50%);
+      background-color: #5af0e8;
+      border-radius: 15px;
+      user-select: none;
+    }
+  }
+}
+
+.tabHeader {
+  display: flex;
+
+  ul {
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: fit-content;
+    cursor: pointer;
+
+    .tabHeaderList {
+      padding: 15px;
+      line-height: 20px;
+      color: teal;
+      transition: 0.3s ease-in-out;
+
+      &:hover {
+        background-color: #3f3f3f18;
+        color: #5af0e8;
+      }
+    }
+
+    .tabActive {
+      color: #5af0e8;
+      background-color: #3f3f3f2f;
+    }
+  }
+}
+
+.tabBody {
+  width: 100%;
+  height: 400px;
+  overflow-y: auto;
+}
+
+.tabBody::-webkit-scrollbar {
+  width: 5px;
+}
+
+.tabBody::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tabBody::-webkit-scrollbar-thumb {
+  background-color: $navyLight;
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .tab {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .tabHeader {
+      display: flex;
+      flex-direction: column;
+      overflow-y: hidden;
+      overflow-x: auto;
+      margin-bottom: 20px;
+
+      &::-webkit-scrollbar {
+        height: 10px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: $darknava2;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: $navyLight;
+      }
+      &::-webkit-scrollbar-thumb:hover {
+        height: 50px;
+      }
+
+      &::-webkit-scrollbar:hover {
+        height: 15px;
+      }
+
+      ul {
+        user-select: none;
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        cursor: pointer;
+
+        li {
+          min-width: 100px;
+          text-align: center;
+        }
+      }
+    }
+
+    .tabIndicatorParent {
+      position: relative;
+      background-color: $darknava2;
+
+      .tabIndicator {
+        transition: 0.3s ease;
+        position: absolute;
+        transform: translateX(0);
+        background-color: transparent;
+        border-radius: 15px;
+      }
+
+      margin-bottom: 20px;
+    }
+  }
+}

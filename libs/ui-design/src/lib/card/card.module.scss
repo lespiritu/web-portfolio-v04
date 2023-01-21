@@ -1,0 +1,107 @@
+@import 'libs/ui-design/src/lib/assets/colors';
+
+.cardlink {
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+}
+
+.activelinkBg {
+  background-color: rgb(74, 100, 107) !important;
+  transition: 0.4s linear;
+}
+
+.card {
+  box-sizing: border-box;
+  font-family: PrimaryLight;
+
+  background-color: $cream;
+  color: $white;
+  border-radius: 5px;
+  padding: 25px;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+
+  &:hover .content .contentTitle {
+    color: $navy;
+  }
+
+  .headerIcon {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    gap: 10px;
+    align-items: center;
+    list-style: none;
+    padding-left: 0;
+
+    color: $navy;
+
+    @mixin iconHover {
+      color: $lightBlue;
+    }
+
+    .folderIcon {
+      margin-right: auto;
+      font-size: 30px;
+      color: $navy;
+      transition: 0.2s ease-in-out;
+
+      &:hover {
+        @include iconHover();
+      }
+    }
+
+    .gitHubLink,
+    .externalLink {
+      color: $navy;
+      font-size: 20px;
+      transition: 0.2s ease-in-out;
+
+      &:hover {
+        @include iconHover();
+      }
+    }
+  }
+
+  .cardContent {
+    .contentTitleActive {
+      font-size: 2rem;
+      margin-top: 20px;
+      display: block;
+
+      transition: 0.3s ease-in-out;
+      color: $yellow;
+      user-select: none;
+    }
+
+    .contentTitle {
+      font-size: 2rem;
+      margin-top: 20px;
+      display: block;
+
+      transition: 0.3s ease-in-out;
+      user-select: none;
+    }
+    .contentBody {
+      line-height: 1.5rem;
+      user-select: none;
+    }
+  }
+
+  .cardFooter {
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    user-select: none;
+  }
+}
+
+.card:hover {
+  background-color: $navyLight;
+  transform: translateY(-10px);
+  transform: scale(1.5);
+}

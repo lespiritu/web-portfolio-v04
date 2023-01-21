@@ -1,0 +1,75 @@
+@import 'libs/ui-design/src/lib/assets/colors';
+.sectionHeader{
+    margin: 20px auto;
+}
+.section{
+    box-sizing: border-box;
+    
+    max-width: 1200px;
+    margin: 0 auto 200px;
+
+
+    .headerPrimary{
+        
+        display: flex;
+        align-items:baseline;
+        gap: 15px;
+
+        .line{
+            background-color: $extraDarkGray;
+            flex: 1 1;
+            max-width: 350px;
+            height: 1px;
+            display: block;
+            align-self: center;
+        }
+
+        .number{
+            user-select: none;
+            color:$lighterGray;
+            font-family: PrimaryBold;
+            font-size: 25px;
+        }
+
+        .title{
+            color:$lightestGray;
+            font-family: PrimaryBold;
+            
+        }
+        
+
+    }
+
+
+    .headerCentered{
+        
+        display: flex;
+        align-items:baseline;
+        justify-content: center;
+        gap: 15px;
+
+        .line{
+            background-color: $extraDarkGray;
+            width: 350px;
+            height: 1px;
+            display: block;
+            align-self: center;
+        }
+
+        .number{
+            user-select: none;
+            color:$lighterGray;
+            font-family: PrimaryBold;
+            font-size: 25px;
+        }
+
+        .title{
+            color:$lightestGray;
+            font-family: PrimaryBold;
+        }
+        
+
+    }
+
+}
+

@@ -1,0 +1,118 @@
+@import '../assets/colors';
+
+.root {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+}
+
+.header1 {
+  font-family: PrimaryBold;
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: 0.12px;
+  line-height: 40px;
+}
+
+.header2 {
+  font-family: PrimaryMedium;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 0.15px;
+  line-height: 36px;
+}
+
+.header3 {
+  font-family: PrimaryMedium;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.25px;
+  line-height: 27px;
+}
+
+.header4 {
+  font-family: PrimaryMedium;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.15px;
+  line-height: 24px;
+}
+
+.header5 {
+  font-family: PrimaryBold;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2.5px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-family: PrimaryLight;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0.3px;
+  line-height: 24px;
+}
+
+.input {
+  font-family: PrimaryRegular;
+  font-size: 14px;
+  font-weight: normal;
+  letter-spacing: 0.25px;
+  line-height: 21px;
+}
+
+.button {
+  font-family: PrimaryMedium;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.25px;
+  line-height: 21px;
+}
+
+.subtext {
+  font-family: PrimaryRegular;
+  font-size: 12px;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+  line-height: 18px;
+}
+
+.label {
+  font-family: PrimaryMedium;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  line-height: 18px;
+}
+
+/**
+ * Display
+**/
+.displayBlock {
+  display: block;
+}
+.displayInline {
+  display: inline;
+}
+.displayInitial {
+  display: initial;
+}
+
+//text alignment
+.inherit {
+  text-align: inherit;
+}
+.left {
+  text-align: left;
+}
+.right {
+  text-align: right;
+}
+.center {
+  text-align: center;
+}
+.justify {
+  text-align: justify;
+}

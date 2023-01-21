@@ -1,0 +1,20 @@
+@import './fonts';
+@import './colors';
+
+body {
+  background: $navy;
+}
+
+body::-webkit-scrollbar {
+  width: 7px;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: $lightBlue;
+  border: 1px solid $lightBlue;
+  border-radius: 10px;
+}

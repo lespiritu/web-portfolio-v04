@@ -1,0 +1,112 @@
+.personal_pipeline_rules:
+  rules:
+    - if: $CI_COMMIT_BRANCH !~ "/^personal/"
+
+.build:frontend: &build_frontend
+  stage: build
+  image: node:16.5.0
+  script:
+    - echo "Building project..."
+    - echo $FRONTEND_BUCKET
+    - npx nx build frontend
+    - echo "Build complete."
+    - ls
+  artifacts:
+    paths:
+      - dist/
+    expire_in: 4 hours
+
+.deploy:frontend: &deploy_frontend
+  stage: deploy # It only runs when *both* jobs in the test stage complete successfully.
+  image:
+    name: amazon/aws-cli
+    entrypoint: ['']
+  script:
+    - echo "Deploying application..."
+    - aws --version
+    - echo "Syncing to S3 bucket"
+    - aws s3 cp dist/apps/frontend s3://$FRONTEND_BUCKET --recursive --exclude "*.js.map" --metadata-directive REPLACE --cache-control max-age=2592000,public # 30 days
+    - aws s3 cp dist/apps/frontend/index.html s3://$FRONTEND_BUCKET/index.html --metadata-directive REPLACE --cache-control "" # reset html file data since we dont want it to be cached on the browser
+    - echo "Clearing Cloudfront cache"
+    - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
+    - echo "Frontend is live"
+
+# Cache modules in between jobs
+cache:
+  key: $CI_COMMIT_REF_SLUG
+  paths:
+    - .npm/
+
+stages: # List of stages for jobs, and their order of execution
+  - install
+  - build
+  - test
+  - deploy
+  - post deploy
+
+install_dependencies:
+  stage: install
+  image: node:16.5.0
+  script:
+    - npm prune
+    - npm ci --cache .npm --prefer-offline
+  artifacts:
+    paths:
+      - node_modules/
+    expire_in: 1 week
+
+build: # This job runs in the build stage, which runs first.
+  <<: *build_frontend
+
+unit-test: # This job runs in the test stage.
+  stage: test # It only starts when the job in the build stage completes successfully.
+  image: node:16.5.0
+  script:
+    - ls
+    - echo "Running frontend unit tests... "
+    - npx nx test frontend --verbose
+    - echo "Frontend Unit test completed!"
+    - echo "Running ui-design lib unit tests"
+    - npx nx test ui-design --verbose
+    - echo "ui-design Unit test completed!"
+    - echo "Run this to test all npx nx run-many --target=test --all"
+
+lint-test: # This job also runs in the test stage.
+  stage: test # It can run at the same time as unit-test-job (in parallel).
+  image: node:16.5.0
+  script:
+    - ls
+    - echo "Linting code... This will take about 5 seconds."
+    - sleep 5
+    - echo "No lint issues found."
+
+deploy:prod: # This job runs in the deploy stage.
+  <<: *deploy_frontend
+  rules:
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+
+deploy:dev:
+  <<: *deploy_frontend
+  rules:
+    - if: $CI_COMMIT_BRANCH == "development"
+
+deploy:personal:
+  stage: deploy
+  image:
+    name: node:16.5.0
+    entrypoint: ['']
+  script:
+    - npm install -g aws-cdk
+    - cdk --version
+    - echo "Deploying personal project .... "
+    - ls
+    ## Build frontend, Build Stack, deploy to AWS
+    - npm run frontend:stack:build,deploy
+
+post-deploy:prod:
+  stage: post deploy
+  image: curlimages/curl
+  rules:
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+  script:
+    - curl https://sebulinozeke.com | grep Frontend
